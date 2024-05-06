@@ -47,3 +47,13 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Screenshots
+
+### Home Page
+
+![Home](public/home.png)
+
+### Sign In Page
+
+![Login](public/Sign-in.png)
