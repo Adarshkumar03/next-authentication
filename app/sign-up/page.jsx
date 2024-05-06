@@ -25,7 +25,7 @@ function SignUp() {
   const handleGoogleSignup = async () => {
     const provider = new GoogleAuthProvider();
     try {
-      const result = await signInWithRedirect(auth, provider);
+      const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log({ user });
       router.push("/");
