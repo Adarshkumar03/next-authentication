@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "@/app/firebase/config";
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 const SignIn = () => {
   const [email, setEmail] = useState("");
@@ -24,12 +25,12 @@ const SignIn = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-700 max-h-screen rounded-lg shadow-xl w-1/2 xs:w-full">
+    <div className="md:h-screen flex flex-col md:flex-row bg-gray-900">
+      <div className="bg-gray-700 h-1/2 md:h-screen rounded-lg shadow-xl w-full md:w-1/2">
         <img
           src="/painting.jpg"
           alt="Sign Up Illustration"
-          className="object-fill h-screen w-full"
+          className="object-fill md:h-screen w-full"
         />
       </div>
       <div className="bg-[#071829] p-10 rounded-lg shadow-xl w-full md:w-1/2 md:h-screen flex flex-col justify-center content-center">
@@ -56,7 +57,9 @@ const SignIn = () => {
             Journey to a trillion miles starts from here!!
           </p>
         </div>
-        <h1 className="text-white text-2xl mb-5 mr-auto ml-auto font-semibold">Sign In</h1>
+        <h1 className="text-white text-2xl mb-5 mr-auto ml-auto font-semibold">
+          Sign In
+        </h1>
         <input
           type="email"
           placeholder="Email"
@@ -77,6 +80,12 @@ const SignIn = () => {
         >
           Sign In
         </button>
+        <p className="ml-auto mr-auto text-slate-200">
+          Don't have an account?{" "}
+          <Link href="/sign-up" className="text-[#018cca]">
+            Sign Up
+          </Link>
+        </p>
       </div>
     </div>
   );

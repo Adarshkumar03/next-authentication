@@ -10,6 +10,7 @@ import {
   signInWithPopup,
   signInWithRedirect,
   cr,
+  getRedirectResult,
 } from "firebase/auth";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
@@ -41,6 +42,7 @@ function SignUp() {
       sessionStorage.setItem("user", true);
       setEmail("");
       setPassword("");
+      router.push("/sign-in");
     } catch (e) {
       console.error(e);
     }
